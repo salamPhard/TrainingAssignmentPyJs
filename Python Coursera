@@ -1,0 +1,24 @@
+largest = None  #Assuming no largest number exist
+smallest = None #Assuming no smallest number exist
+numLists = []  #create an empty array of numbers
+while True:
+    num = input("Enter a number: ")
+    if num == "done" : 
+        break
+    try:
+        fval = float(num)  #convert to float
+    except: #if user enter anything than done, catch the error 
+        print("Invalid input")
+        continue
+    numLists.append(fval)
+    for numList in numLists:
+        if smallest is None:
+            smallest = numList
+        elif numList < smallest:
+            smallest = numList
+        elif largest is None:
+            largest = numList
+        elif numList > largest:
+            largest = numList
+print("Maximum", largest)
+print("Minimum", smallest)
